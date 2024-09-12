@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\FrontController;
+use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [FrontController::class, 'index'])->name('feedback.index');
+Route::get('/', [FeedbackController::class, 'index'])->name('feedback.index');
