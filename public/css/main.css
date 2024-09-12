@@ -1,0 +1,13 @@
+.button-main {
+    margin: auto;
+    width: fit-content;
+    padding: 12px 24px;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.button-main:hover {
+    opacity: 0.7;
+}
