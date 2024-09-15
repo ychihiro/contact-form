@@ -11,7 +11,7 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        $ages = Age::all();
+        $ages = Age::orderBy('sort')->get();
         return view('index', ['ages' => $ages]);
     }
 
