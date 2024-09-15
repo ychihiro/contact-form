@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FeedbackRequest;
 use App\Models\Age;
+use App\Models\Answer;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -32,6 +33,19 @@ class FeedbackController extends Controller
         if ($request->has('back')) {
             return redirect()->route('feedback.index')->withInput();
         }
+
+        $property = $request->only(['fullname', 'gender', 'age', 'email', 'isSendEmail', 'feedback']);
+
+        Answer::create([
+                'fullname' => $property['fullname'],
+                'gender'=> $property['gender'],
+                'age_id' => $property['age'],
+                'email' => $property['email'],
+                'is_send_email' => $property['isSendEmail'],
+                'feedback' => $property['feedback'],
+            ]);
+
+        return view('thanks');
     }
 
 }
