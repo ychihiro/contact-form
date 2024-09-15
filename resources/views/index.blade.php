@@ -74,7 +74,7 @@
         <div class="permission-container">
           <p>登録したメールアドレスにメールマガジンをお送りしてもよろしいですか？</p>
           <div class="checkbox-container">
-            <input type="checkbox" name="isSendEmail" {{old('isSendEmail') == 0 ? '' : 'checked'}} class="input-checkbox">
+            <input type="checkbox" name="isSendEmail" {{ old('isSendEmail', 1) ? 'checked' : '' }} class="input-checkbox">
             <p>送信を許可します</p>
           </div>
         </div>
