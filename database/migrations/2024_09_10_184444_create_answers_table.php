@@ -15,7 +15,7 @@ return new class extends Migration
             $table->foreignId('age_id')->constrained();
             $table->string('email');
             $table->tinyInteger('is_send_email')->comment('0: 送信許可, 1: 送信不可');
-            $table->text('feedback');
+            $table->text('feedback')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
