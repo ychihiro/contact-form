@@ -58,3 +58,11 @@ a {
 .button-sub:hover {
     opacity: 0.7;
 }
+
+/* フラッシュメッセージ */
+.message {
+    padding: 16px;
+    text-align: center;
+    color: white;
+    background-color: cadetblue;
+}

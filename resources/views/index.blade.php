@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+  @if (session('success'))
+    <div class="message">
+      {{ session('success') }}
+    </div>
+  @endif
   <div class="container">
     <p class="title">システムへのご意見をお聞かせください</p>
     <form action="{{ route('feedback.confirm') }}" method="post" class="feedback-form">

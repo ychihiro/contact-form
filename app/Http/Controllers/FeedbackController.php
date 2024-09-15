@@ -45,7 +45,9 @@ class FeedbackController extends Controller
                 'feedback' => $property['feedback'],
             ]);
 
-        return view('thanks');
+        session()->flash('success', 'アンケートを送信しました');
+
+        return redirect()->route('feedback.index');
     }
 
 }
