@@ -7,8 +7,8 @@ use Illuminate\Database\Seeder;
 
 class AnswerSeeder extends Seeder
 {
-    public function run(): void
-    {
-        Answer::factory()->count(25)->create();
-    }
+  public function run(): void
+  {
+    Answer::factory()->count(25)->create();
+  }
 }
