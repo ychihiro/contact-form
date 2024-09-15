@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ContactForm</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/main.css">
+@extends('layouts.app')
+
+@section('css')
   <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
+@endsection
+
+@section('content')
   <div class="container">
     <p class="title">システムへのご意見をお聞かせください</p>
     <form action="{{ route('feedback.confirm') }}" method="post" class="feedback-form">
@@ -90,5 +86,4 @@
       <button type="submit" class="button-main">確認</button>
     </form>
   </div>
-</body>
-</html>
+@endsection

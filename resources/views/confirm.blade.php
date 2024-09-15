@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ContactForm</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
+@extends('layouts.app')
+
+@section('css')
     <link rel="stylesheet" href="css/confirm.css">
-</head>
-<body>
+@endsection
+
+@section('content')
     <div class="container">
         <p class="title">内容確認</p>
         <form action="{{ route('feedback.create') }}" method="post" class="feedback-form confirm-form">
@@ -67,5 +63,4 @@
             </div>
         </form>
     </div>
-</body>
-</html>
+@endsection
