@@ -5,21 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ContactForm</title>
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <div class="container">
-    <p class="message">システムへのご意見をお聞かせください</p>
+    <p class="title">システムへのご意見をお聞かせください</p>
     <form action="{{ route('feedback.confirm') }}" method="post" class="feedback-form">
       @csrf
       <div class="form-item">
         <div class="label-container">
-          <label for="name">氏名</label>
+          <label for="fullname">氏名</label>
           <span class="required-mark">※</span>
         </div>
-          <input type="text" name="name" id="name" placeholder="入力してください" class="input-text">
+          <input type="text" name="fullname" id="name" placeholder="入力してください" class="input-text">
       </div>
+      @error('fullname')
+        <p class="error-message">{{ $message }}</p>
+      @enderror
 
       <div class="form-item">
         <div class="label-container">
@@ -33,6 +36,9 @@
           <input type="radio" name="gender" value="women" class="input-radio">女性
         </label>
       </div>
+      @error('gender')
+        <p class="error-message">{{ $message }}</p>
+      @enderror
 
       <div class="form-item">
         <div class="label-container">
@@ -46,6 +52,9 @@
             @endforeach
           </select>
       </div>
+      @error('age')
+        <p class="error-message">{{ $message }}</p>
+      @enderror
 
       <div class="form-item">
         <div class="label-container">
@@ -54,6 +63,9 @@
         </div>
           <input type="text" name="email" id="email" placeholder="入力してください" class="input-text">
       </div>
+      @error('email')
+        <p class="error-message">{{ $message }}</p>
+      @enderror
 
       <div class="form-item">
         <div class="label-container">
@@ -62,17 +74,17 @@
         <div class="permission-container">
           <p>登録したメールアドレスにメールマガジンをお送りしてもよろしいですか？</p>
           <div class="checkbox-container">
-            <input type="checkbox" value="isSendEmail" checked class="input-checkbox">
+            <input type="checkbox" name="isSendEmail" checked class="input-checkbox">
             <p>送信を許可します</p>
           </div>
         </div>
       </div>
 
       <div class="form-item">
-        <div class="label-container label-opinion">
-          <label for="opinion">ご意見</label>
+        <div class="label-container label-feedback">
+          <label for="feedback">ご意見</label>
         </div>
-        <textarea name="opinion" id="opinion" placeholder="入力してください" class="input-text" rows="10"></textarea>
+        <textarea name="feedback" id="feedback" placeholder="入力してください" class="input-text" rows="10"></textarea>
       </div>
 
       <button type="submit" class="button-main">確認</button>
