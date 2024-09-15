@@ -30,10 +30,10 @@
           <span class="required-mark">※</span>
         </div>
         <label for="men" class="label-gender">
-          <input type="radio" name="gender" value="men" class="input-radio" checked>男性
+          <input type="radio" name="gender" value="1" class="input-radio" checked>男性
         </label>
         <label for="women" class="label-gender">
-          <input type="radio" name="gender" value="women" class="input-radio">女性
+          <input type="radio" name="gender" value="2" class="input-radio">女性
         </label>
       </div>
       @error('gender')
@@ -48,7 +48,7 @@
           <select class="input-text" name="age">
             <option disabled selected>選択してください</option>
             @foreach($ages as $age)
-              <option value="{{ $age }}">{{ $age->age }}</option>
+              <option value={{$age}}>{{ $age['age'] }}</option>
             @endforeach
           </select>
       </div>
