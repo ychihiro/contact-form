@@ -25,7 +25,7 @@
                 <div class="label-container">
                     <p>性別</p>
                 </div>
-                <p>{{$property['gender'] === 1 ? '男性' : '女性'}}</p>
+                <p>{{$property['gender'] == 1 ? '男性' : '女性'}}</p>
             </div>
             <input type="hidden" name="gender" value={{$property['gender']}}>
 
@@ -35,7 +35,7 @@
                 </div>
                 <p>{{$property['age']->age}}</p>
             </div>
-            <input type="hidden" name="age" value={{$property['age']}}>
+            <input type="hidden" name="age" value={{$property['age']->sort}}>
 
             <div class="form-item">
                 <div class="label-container">

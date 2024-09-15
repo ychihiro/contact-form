@@ -27,4 +27,11 @@ class FeedbackController extends Controller
         return view('confirm', ['property' => $property]);
     }
 
+    public function create(FeedbackRequest $request)
+    {
+        if ($request->has('back')) {
+            return redirect()->route('feedback.index')->withInput();
+        }
+    }
+
 }
