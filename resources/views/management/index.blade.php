@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="css/management/index.css">
+<link rel="stylesheet" href="{{asset('css/management/index.css')}}">
 @endsection
 
 @section('content')
 <div class="container">
   <p class="title">アンケート管理システム</p>
-  <form action="" method="get" class="search-form">
+  <form action="{{route('management.search')}}" method="get" class="search-form">
     @csrf
     <div class="form-item-container">
       <div class="form-item">
         <label for="name" class="label-container">氏名</label>
-        <input type="text" name="name" id="name" placeholder="入力してください" class="input-text search-input-text">
+        <input type="text" name="fullname" id="name" placeholder="入力してください" class="input-text search-input-text">
       </div>
 
       <div class="form-item">
@@ -27,8 +27,11 @@
 
       <div class="form-item form">
         <label class="label-container">性別</label>
+        <label for="all" class="label-gender">
+          <input type="radio" name="gender" value="0" class="input-radio" checked>すべて
+        </label>
         <label for="men" class="label-gender">
-          <input type="radio" name="gender" value="1" class="input-radio" checked>男性
+          <input type="radio" name="gender" value="1" class="input-radio">男性
         </label>
         <label for="women" class="label-gender">
           <input type="radio" name="gender" value="2" class="input-radio" {{old('gender') == 2 ? 'checked' : ''}}>女性
@@ -40,9 +43,9 @@
       <div class="form-item">
         <label for="date" class="label-container">登録日</label>
         <div class="input-date">
-          <input type="date" name="name" id="date" class="input-text search-input-text">
+          <input type="date" name="startDate" id="date" class="input-text search-input-text">
           <span>~</span>
-          <input type="date" name="name" id="date" class="input-text search-input-text">
+          <input type="date" name="endDate" id="date" class="input-text search-input-text">
         </div>
       </div>
 
@@ -63,8 +66,8 @@
     </div>
 
     <div class="button-container">
-      <button type="submit" name="back" class="button-sub">リセット</button>
-      <button type="submit" name="send" class="button-main">検索</button>
+      <button type="submit" name="reset" class="button-sub">リセット</button>
+      <button type="submit" name="search" class="button-main">検索</button>
     </div>
   </form>
 
