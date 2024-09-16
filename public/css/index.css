@@ -3,31 +3,8 @@
     color: red;
 }
 
-.label-gender {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
 .label-feedback {
     align-items: first baseline;
-}
-
-.input-text {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-}
-
-.input-radio {
-    width: 20px;
-    height: 20px;
-}
-
-.input-checkbox {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
 }
 
 .input-opinion {

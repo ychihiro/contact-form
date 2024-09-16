@@ -1,9 +1,17 @@
+select,
+input[type="radio"],
+input[type="checkbox"],
+input[type="date"] {
+    cursor: pointer;
+}
+
 .container {
-    height: 100vh;
+    padding: 40px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .title {
@@ -15,7 +23,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .form-item {
@@ -28,6 +36,29 @@
     min-width: 128px;
     gap: 4px;
     align-items: center;
+}
+
+.label-gender {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-text {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.input-radio {
+    width: 20px;
+    height: 20px;
+}
+
+.input-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 /* ボタン */
