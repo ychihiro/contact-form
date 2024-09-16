@@ -28,4 +28,11 @@ class ManagementController extends Controller
 
     return view('management.show', compact('answer'));
   }
+
+  public function delete($id)
+  {
+    Answer::destroy($id);
+
+    return redirect()->route('management.index');
+  }
 }

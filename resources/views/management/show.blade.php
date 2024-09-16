@@ -65,8 +65,11 @@
     </div>
 
     <div class="button-container">
-      <a href="{{route('management.index')}}" class="button-main">一覧に戻る</a>
-      <a href="" class="button-sub">削除</a>
+      <a href="{{route('management.index')}}" class="button-main back-button">一覧に戻る</a>
+      <form action="{{ route('management.delete', ['id'=>$answer['id']]) }}" method="post">
+        @csrf
+        <button type="submit" class="button-sub delete-button">削除</button>
+      </form>
     </div>
   </div>
 </div>

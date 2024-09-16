@@ -5,5 +5,14 @@
 }
 
 .button-container {
+    width: fit-content;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
     text-align: center;
+}
+
+.back-button,
+.delete-button {
+    line-height: 32px;
 }
