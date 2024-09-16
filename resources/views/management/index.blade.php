@@ -91,7 +91,7 @@
       <td>{{$answer['age']}}</td>
       <td class="feedback">{{$answer['feedback']}}</td>
       <td class="td-detail">
-        <a href="" class="button-main">
+        <a href="{{ route('management.show', ['id'=>$answer['id']])}}" class="button-main">
           詳細
         </a>
       </td>

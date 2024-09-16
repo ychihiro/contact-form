@@ -20,4 +20,12 @@ class ManagementController extends Controller
 
     return view('management.index', compact('answers', 'ages'));
   }
+
+  public function show($id)
+  {
+    $answer = Answer::find($id);
+    $answer->age = Age::find($answer->age_id)->age;
+
+    return view('management.show', compact('answer'));
+  }
 }
